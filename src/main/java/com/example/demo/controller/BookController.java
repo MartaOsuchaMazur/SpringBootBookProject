@@ -1,6 +1,7 @@
-package com.example.demo;
+package com.example.demo.controller;
 
 
+import com.example.demo.entity.Book;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
