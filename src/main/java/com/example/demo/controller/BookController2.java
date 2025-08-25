@@ -22,6 +22,7 @@ public class BookController2 {
         books.add(new Book(4L, "Lord of the Rings", "J.R.R. Tolkien"));
     }
 
+    //http://localhost:8080/books/getAvailableBooks?isPresent=true
     @GetMapping("/getAvailableBooks")
     public List<Book> listAvailableBooks(@RequestParam("isPresent") Boolean isPresent) {
         if (isPresent) {
