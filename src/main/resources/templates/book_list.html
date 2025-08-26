@@ -19,10 +19,13 @@
         <td th:text="${book.title}"></td>
         <td th:text="${book.author}"></td>
         <td>
-            <a th:href="@{'/books/edit/' + ${book.id}}">Edit</a>
+            <form th:action="@{'/books/edit/' + ${book.id}}" method="post" style="display:inline;">
+                <button type="submit">Edit</button>
+            </form>
             <form th:action="@{'/books/delete/' + ${book.id}}" method="post" style="display:inline;">
                 <button type="submit">Delete</button>
             </form>
+
         </td>
     </tr>
 </table>
