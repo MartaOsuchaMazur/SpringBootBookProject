@@ -24,6 +24,13 @@ public class BookService {
         return bookRepository.findById(id);
     }
 
+    public List<Book> findBooksByAuthor(String author) {
+        return bookRepository.findAll()
+                .stream()
+                .filter(book -> book.getAuthor() !=null && book.getAuthor().equalsIgnoreCase(author))
+                .toList();
+    }
+
     public void save(Book book){
         bookRepository.save(book);
     }

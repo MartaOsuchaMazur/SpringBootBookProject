@@ -26,6 +26,12 @@ public class BookController {
         return "book_list";
     }
 
+    @GetMapping("/by-author")
+    public String getBooksByAuthor(@RequestParam("author") String author, Model model) {
+        model.addAttribute("books", bookService.findBooksByAuthor(author));
+        return "book_list";
+    }
+
     @GetMapping("/add")
     public String showFormToAddBook(Model model){
       model.addAttribute("book", new Book());
